@@ -17,7 +17,9 @@ def test_base_data_schema_and_ranges(base):
     # YOUR CODE (gap 1): every distance_km is between 0.1 and 50          (first pattern)
     # YOUR CODE (gap 2): every restaurant is one of RESTAURANTS           (second pattern, the list is RESTAURANTS)
     # YOUR CODE (gap 3): the late rate (the mean of `late`) is between 0.05 and 0.40   (third pattern)
-    raise NotImplementedError
+    assert df["distance_km"].between(0.1, 50).all()
+    assert df["restaurant"].isin(RESTAURANTS).all()
+    assert 0.05 < df["late"].mean() < 0.40
 
 
 def test_incoming_batches_pass_the_data_checks():
