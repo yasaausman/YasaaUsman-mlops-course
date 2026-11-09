@@ -11,4 +11,4 @@ if __name__ == "__main__":
     # YOUR CODE (Part 6): run the flow every minute (for the lab only; a real job would run once a night).
     # The cron string has five fields: minute hour day-of-month month day-of-week.
     # Hint: a star in every field means "every". A nightly 2 a.m. run is "0 2 * * *".
-    delivery_pipeline.serve(name="nightly-retrain", cron="___")
+    delivery_pipeline.serve(name="nightly-retrain", cron="* * * * *")
